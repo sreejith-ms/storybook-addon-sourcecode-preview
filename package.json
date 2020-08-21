@@ -1,8 +1,18 @@
 {
-  "name": "storybook-addon-sourcepreview",
+  "name": "storybook-addon-sourcecode-preview",
   "version": "0.0.1",
   "description": "Source code preview addon for storybook",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sreejith-ms/storybook-addon-sourcecode-preview.git"
+  },
+  "author": {
+    "name": "Sreejith MS"
+  },
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sreejith-ms/storybook-addon-sourcecode-preview/issues"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
