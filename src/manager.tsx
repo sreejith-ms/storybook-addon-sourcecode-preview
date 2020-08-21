@@ -12,7 +12,7 @@ export function register() {
       type: types.PANEL,
       render: ({ active, key }) => (
         <AddonPanel active={active} key={key}>
-          <StoryPanel />
+          {active ? <StoryPanel /> : null}
         </AddonPanel>
       ),
       paramKey: 'storysource',
