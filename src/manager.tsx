@@ -8,14 +8,14 @@ import { ADDON_ID, PANEL_ID } from '.';
 export function register() {
   addons.register(ADDON_ID, (api) => {
     addons.addPanel(PANEL_ID, {
-      title: 'Story source preview',
+      title: 'Source',
       type: types.PANEL,
       render: ({ active, key }) => (
         <AddonPanel active={active} key={key}>
           {active ? <StoryPanel /> : null}
         </AddonPanel>
       ),
-      paramKey: 'storysource',
+      paramKey: 'sourcePreview',
     });
   });
 }

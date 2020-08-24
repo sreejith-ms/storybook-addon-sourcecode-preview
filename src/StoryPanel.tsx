@@ -20,9 +20,9 @@ export const StoryPanel = () => {
     copyable: true,
     padded: true
   };
-  const options = useParameter('storysource', [])
+  const options = useParameter('sourcePreview', [])
     .reduce((acc, option) => {
-      if (option.tab && option.sourceLocation) {
+      if (option.tab && option.path) {
         acc.push({ ...defaults, ...option });
       }
       return acc;
@@ -33,7 +33,7 @@ export const StoryPanel = () => {
 
   React.useEffect(() => {
     async function getData() {
-      const promises = options.map(option => fetchData(option.sourceLocation));
+      const promises = options.map(option => fetchData(option.path));
       const data = await Promise.all(promises);
       setAllSource(data);
       setIsLoading(false);
@@ -69,7 +69,7 @@ async function fetchData(url: string): Promise<string> {
     if (response.ok) {
       return await response.text();
     } else {
-      return 'Source code not avialable';
+      return 'Source code is not avialable';
     }
   } catch (error) {
     return 'Error occurred while fetching source code';
